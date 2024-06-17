@@ -59,7 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public String deleteEmployee(int id) {
         var exist = employeeRepo.findById(id);
-        if (exist != null){
+        if (exist == null){
             throw new RuntimeException("Not Found");
         }
         employeeRepo.delete(id);
