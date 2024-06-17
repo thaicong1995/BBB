@@ -25,8 +25,8 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public Employee addEmployee(@RequestBody EmployeeDTO employeeDTO) {
-        return employeeService.addEmployee(employeeDTO);
+    public Employee addEmployee(@RequestBody Employee employee) {
+        return employeeService.addEmployee(employee);
     }
 
     @PutMapping("/{id}")

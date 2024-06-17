@@ -33,18 +33,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee addEmployee(EmployeeDTO employeeDTO) {
-        if (employeeDTO == null){
-            return null;
-        }
-        Employee newEmployee = new Employee();
-        newEmployee.setFullName(employeeDTO.getFullName());
-        newEmployee.setBirthday(employeeDTO.getBirthday());
-        newEmployee.setAddress(employeeDTO.getAddress());
-        newEmployee.setPosition(employeeDTO.getPosition());
-        newEmployee.setDepartment(employeeDTO.getDepartment());
+    public Employee addEmployee(Employee employee) {
 
-        Employee addedEmployee = employeeRepo.insert(newEmployee);
+        Employee addedEmployee = employeeRepo.insert(employee);
 
         return addedEmployee;
     }
@@ -52,7 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee updateEmployee(int id,EmployeeDTO employeeDTO) {
         var exist = employeeRepo.findById(id);
-        if (exist != null){
+        if (exist == null){
             throw new RuntimeException("Not Found");
         }
         exist.setFullName(employeeDTO.getFullName());

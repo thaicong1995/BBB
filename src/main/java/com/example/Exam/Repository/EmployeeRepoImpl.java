@@ -11,12 +11,12 @@ import java.util.List;
 
 @Repository
 public class EmployeeRepoImpl implements EmployeeRepo {
-    private static final String SELECT_BY_ID = "SELECT * FROM employee WHERE id=?";
-    private static final String SELECT_ALL = "SELECT * FROM employee";
-    private static final String SELECT_BY_NAME ="select * from employee where full_name=?";
-    private static final String INSERT_EMPLOYEE = "INSERT INTO employee (full_name, birthday, address, position, department) VALUES (?, ?, ?, ?, ?)";
-    private static final String DELETE_EMPLOYEE = "DELETE FROM employee WHERE id=?";
-    private static final String UPDATE_EMPLOYEE = "UPDATE employee SET full_name=?, birthday=?, address=?, position=?, department=? WHERE id=?";
+    private static final String SELECT_BY_ID = "SELECT * FROM employees WHERE id=?";
+    private static final String SELECT_ALL = "SELECT * FROM employees";
+    private static final String SELECT_BY_NAME ="select * from employees where full_name=?";
+    private static final String INSERT_EMPLOYEE = "INSERT INTO employees (full_name, birthday, address, position, department) VALUES (?, ?, ?, ?, ?)";
+    private static final String DELETE_EMPLOYEE = "DELETE FROM employees WHERE id=?";
+    private static final String UPDATE_EMPLOYEE = "UPDATE employees SET full_name=?, birthday=?, address=?, position=?, department=? WHERE id=?";
 
     private DbConnection databaseConnection;
 
